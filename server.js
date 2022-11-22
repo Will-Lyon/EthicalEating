@@ -35,10 +35,6 @@ app.get('/brand', function (req, res, next) {
     })
 })
 
-app.get('/register', function (req, res, next) {
-    res.status(200).render('register')
-})
-
 app.get('/brand/:id', function (req, res, next) {
     var brandId = req.params.id;
     if (brands[brandId]) {

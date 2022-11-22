@@ -33,22 +33,9 @@
     <button type="submit" class="btn btn-primary input-group-append">Search</button>
   </form>
 
-  <div id="bg-modal">
-    <div class="login-modal">
-      <div class="close-modal">+</div>
-      <h3 class="h3-black login-text">Log In</h3>
-      <form action="">
-        <input type="text" class="login-input" placeholder="UserName">
-        <input type="password" class="login-input" placeholder="Password">
-        <button class="submit-login">Login</button>
-      </form>
-      <h3 class="h3-black register-text">Need to Register an Account, <a href="/register"
-          class="register-button">Register</a>
-      </h3>
-    </div>
-  </div>
-
-
+  <!-- Access Login/Register Pop up handlebar files-->
+  {{> loginPop}}
+  {{> RegisterPop}}
 
 </body>
 
