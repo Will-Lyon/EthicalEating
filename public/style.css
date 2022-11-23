@@ -1,0 +1,193 @@
+ :root {
+   --color-blue: #6B8C8E;
+   --color-green: #7f8b77;
+   --color-white: #FFFDF8;
+   --color-light-gray: #E4E3E6;
+   --color-light-blue: #C0C7C8;
+   --color-purple: #4D3942;
+ }
+
+ header {
+   background-color: white;
+   color: black;
+
+ }
+
+ body {
+   background-color: var(--color-light-gray);
+   color: black;
+   margin: 0;
+   font-size: large;
+   background-image: url(farm_field.jpeg);
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: cover;
+ }
+
+ a {
+   text-decoration: none;
+   color: var(--color-blue);
+
+ }
+
+ a:hover {
+   text-decoration: underline;
+   color: var(--color-blue);
+ }
+
+ h3 {
+   color: #fcf6f6;
+
+ }
+
+ .navbar {
+   font-size: 20px;
+   line-height: 22px;
+ }
+
+ .navlist {
+   margin: 0;
+ }
+
+ .navitem {
+   display: inline-block;
+   line-height: 20px;
+ }
+
+ .navbar-light .navbar-brand {
+   color: black;
+ }
+
+ .navbar .navbar-brand:hover {
+   text-decoration: none;
+   color: black;
+ }
+
+ .navlink a {
+   padding: 8px 10px;
+   display: inline-block;
+   color: black;
+
+ }
+
+ .navlink a:hover {
+   text-decoration: none;
+ }
+
+ .header {
+   text-align: center;
+   font-size: 1.75em
+ }
+
+ .EE {
+   text-align: center;
+   margin: 30px;
+   margin-bottom: 5px;
+   color: white;
+ }
+
+ .homeimg {
+   width: 100vw;
+   height: 20vw;
+   object-fit: cover;
+   object-position: 50% 40%;
+ }
+
+ .jumbotron {
+   background-color: var(--color-light-gray);
+ }
+
+ h2 {
+   text-align: center;
+   font-size: 16px;
+   margin-bottom: 60px;
+   color: white
+ }
+
+
+ #login-button:hover {
+   color: grey;
+ }
+
+ #bg-modal {
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.8);
+   position: absolute;
+   top: 0;
+   justify-content: center;
+   align-items: center;
+   display: none;
+ }
+
+ .login-modal {
+   width: 450px;
+   height: 300px;
+   background-color: white;
+   opacity: 1;
+   border-radius: 4px;
+   position: relative;
+ }
+
+ .login-input {
+   width: 50%;
+   display: block;
+   margin: 15px auto;
+ }
+
+ .h3-black {
+   color: black;
+ }
+
+ .close-modal {
+   position: absolute;
+   top: 0;
+   right: 14px;
+   font-size: 25px;
+   transform: rotate(45deg);
+   cursor: pointer;
+ }
+
+ .close-modal:hover {
+   font-size: 30px;
+ }
+
+ .submit-login {
+   border-radius: 50px;
+   width: 35%;
+   margin: -15px -75px;
+   position: relative;
+   top: 50%;
+   left: 50%;
+ }
+
+ .login-text {
+   margin: 0;
+   text-align: center;
+ }
+
+ .register-text {
+   font-size: medium;
+   margin: 15px;
+   text-align: center;
+ }
+
+ #reg-modal {
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.8);
+   position: absolute;
+   top: 0;
+   justify-content: center;
+   align-items: center;
+   display: none;
+ }
+
+ .submit-register {
+   border-radius: 50px;
+   width: 35%;
+   margin: -15px -75px;
+   position: relative;
+   top: 50%;
+   left: 50%;
+ }
