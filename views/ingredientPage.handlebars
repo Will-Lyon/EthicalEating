@@ -1,0 +1,54 @@
+<main class="ingredientPage">
+    <div id="ingredient-search-container">
+    <form action="ingredient/search" class="input-group mb-3 search-bar">
+        <input type="text" class="form-control" name="q" placeholder="Ingredient Name">
+        <button type="submit" class="btn btn-primary input-group-append">Search</button>
+    </form>
+
+    <div class="ingredient-card-container">
+        {{#each ingredient}}
+            {{> ingredientCard}}
+        {{/each}}
+
+    </div>
+    </div>
+
+    <button type="button" id="add-ingredient-button"></button>
+    {{>addIngPop}}
+</main>
+{{!
+<button type="button" id="add-ingredient-button"></button>
+
+<div id="modal-backdrop" class="hidden"></div>
+<div id="add-ingredient-modal" class="hidden">
+
+    <div class="modal-header">
+        <h2>Add an ingredient</h2>
+    </div>
+    <div class="modal-body">
+        
+        <div class="ingredient-name">
+            <label for="ingredient-name-input">Ingredient name</label>
+            <input type="text" id="ingredient-name-input">
+        </div>
+        <div class="ingredient-producer">
+            <label for="ingredient-producer-input">Ingredient producer</label>
+            <input type="text" id="ingredient-producer-input">
+        </div>
+        <div class="ingredient-picture">
+            <label for="ingredient-picture-input">Ingredient picture url</label>
+            <input type="text" id="ingredient-picture-input">
+        </div>
+        <div class="ingredient-rating">
+            <label for="ingredient-rating-input">Ingredient rating</label>
+            <input type="text" id="ingredient-rating-input">
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" id="cancel-button">Cancel</button>
+        <button type="button" id="add-ingredient">Add ingredient</button>
+    </div>
+
+</div>
+}}

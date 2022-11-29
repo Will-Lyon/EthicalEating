@@ -18,12 +18,15 @@
    color: black;
    margin: 0;
    font-size: large;
-   background-image: url(farm_field.jpeg);
+   /*background-image: url(farm_field.jpeg);*/
    background-repeat: no-repeat;
    background-attachment: fixed;
    background-size: cover;
  }
 
+ .landing-page-body {
+    background-image: url(farm_field.jpeg);
+ }
  a {
    text-decoration: none;
    color: var(--color-blue);
@@ -191,3 +194,59 @@
    top: 50%;
    left: 50%;
  }
+
+ .pageNotFound {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
+ .notFoundBox {
+    height:200px;
+    width: 350px;
+    margin-top:100px;
+
+    background-color: var(--color-light-gray);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color:black;
+ }
+
+ .notFoundBox h2 {
+    color:black;
+ }
+
+
+
+ #ingredient-search-container {
+   width: 70%;
+   height: 100vh;
+   margin: 0 15% 0 15%;
+   background-color: white;
+ }
+
+ .ingredient-card-container {
+   height: 100%;
+   margin-top: 15px;
+   border-top: 1px solid black;
+   display: flex;
+ }
+
+ .ingredient-card {
+   width:200px;
+   height:100px;
+   display: block;
+   border: 1px solid var(--color-light-gray);
+   border-radius: 7px;
+ }
+
+ .ingredient-card-body {
+   display: flex;
+   
+ }
+
+
+
