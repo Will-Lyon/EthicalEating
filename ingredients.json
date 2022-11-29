@@ -1,3 +1,24 @@
-{
-  
-}
+
+  {
+    "Name" : "apple",
+    "Producers" : [
+      {
+        "producerName" : "Firstfruits Farm",
+        "numReviews" : "1",
+        "ImageURL" : "https://www.applesfromny.com/wp-content/uploads/2020/06/SnapdragonNEW.png",
+        "ethicScore" : "5.6"
+      },
+      {
+        "producerName" : "Queener Farm",
+        "numReviews" : "1",
+        "ImageURL" : "https://www.applesfromny.com/wp-content/uploads/2020/06/SnapdragonNEW.png",
+        "ethicScore" : "7.2"
+      },
+      {
+        "producerName" : "Adair's orchards",
+        "numReviews" : "1",
+        "ImageURL" : "https://www.applesfromny.com/wp-content/uploads/2020/06/SnapdragonNEW.png",
+        "ethicScore" : "4"
+      }
+    ]
+  }

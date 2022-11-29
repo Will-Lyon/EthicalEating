@@ -4,17 +4,18 @@
         <input type="text" class="form-control" name="q" placeholder="Ingredient Name">
         <button type="submit" class="btn btn-primary input-group-append">Search</button>
     </form>
-
+    <h1 id="ing-search-result"> Results for {{name}}</h1>
     <div class="ingredient-card-container">
-        {{#each ingredient}}
+        
+        {{#each ingredientList}}
             {{> ingredientCard}}
         {{/each}}
 
     </div>
     </div>
 
-    <button type="button" id="add-ingredient-button"></button>
-    {{>addIngPop}}
+    <button type="button" id="add-producer-button"></button>
+    {{>addIngProdPop}}
 </main>
 {{!
 <button type="button" id="add-ingredient-button"></button>

@@ -25,7 +25,9 @@ app.get('/', function (req, res, next) {
 
 app.get('/ingredient', function (req, res, next) {
     res.status(200).render('ingredientPage', {
-        ingredientList: ingredients
+        //ingredientList: ingredients
+        name : ingredients.Name,
+        ingredientList : ingredients.Producers
     })
 })
 
@@ -51,9 +53,8 @@ var punctuation = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
 
 app.get('/ingredient/:id', function (req, res, next) {
     var ingredientId = req.params.id;
-    console.log(ingredientId)
     if (ingredients[ingredientId]) {
-        res.status(200).render('ingredientPage', ingredients[ingredientId])
+        res.status(200).render('ingredientPage', ingredientList[ingredientId])
     }
     else {
         next()

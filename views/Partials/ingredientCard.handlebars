@@ -1,18 +1,23 @@
 <main class="ingredient-card">
-    <div class="ingredient-card-header">
-        <a>{{ingredient}}</a>
-        <h2>{{producer}}</h2>
-    </div>
+    
     <div class="ingredient-card-body">
+        {{!--
         <div class="ingredient-photo-container">
-            <img class="ingredient-photo" src="{{photo}}" />
+            <img class="ingredient-photo" src="{{ImageURL}}" />
         </div>
+        --}}
+        
+        <a class="ingredient-producer-name"> Produced by {{producerName}}</a>
+        <a class="ingredient-score">Ethical Rating: {{ethicScore}}</a>
+        <a class="ingredient-rate-button" href="#">+Rate Them</a>
+        {{!--
         <div class="ingredient-score-container">
-            <div class="ingredient-score">{{ethicalScore}}</div>
-            <a>Ethical Rating</a>
-
-            
+            <div class="ingredient-score">
+                <a>Ethical Rating: {{ethicScore}}</a>
+            </div>
+            <a class="ingredient-rate-button" href="#">+Rate Them</a>
         </div>
+        --}}
         {{!rate producer button}}
     </div>
 </main>
