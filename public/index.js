@@ -18,7 +18,7 @@ document.querySelectorAll('.close-modal').forEach(item => {
         }
     })
 })
-
+/* breaking 
 document.getElementById('register-button').addEventListener('click',
     function () {
         bgModal.style.display = 'none';
@@ -29,5 +29,28 @@ document.getElementById('login-link').addEventListener('click',
     function () {
         bgModal.style.display = 'flex';
         regModal.style.display = 'none';
+    });
+*/
+
+
+//Event listeners for add ingredient, procuer, and rate popups
+var ingModal = document.getElementById('ingModal')
+
+//shamelessly stolen vvv
+document.querySelectorAll('.close-ing-modal').forEach(item => {
+    item.addEventListener('click', event => {
+        ingModal.style.display = 'none'
+        //Resets all entered data for logging in or registering 
+        var userInput = document.querySelectorAll('.ing-input')
+        for (let i = 0; i < userInput.length; i++) {
+            userInput[i].value = ''
+        }
+    })
+})
+
+
+document.getElementById('add-ing-button').addEventListener('click',
+    function () {
+        ingModal.style.display = 'flex';  
     });
 
