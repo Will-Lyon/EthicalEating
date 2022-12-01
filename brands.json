@@ -32,11 +32,11 @@
         ]
     },
     {
-        "Name" : "Firstfruits Farm",
-        "numReviews" : "2",
-        "ethicScore" : "5.6",
+        "Name" : "Crazy Acres",
+        "numReviews" : "3",
+        "ethicScore" : "6.2",
         "Ingredients" : [
-            "apple", "pear"
+            "egg"
         ]
     }
 ]
