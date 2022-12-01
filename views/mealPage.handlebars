@@ -1,0 +1,24 @@
+<div class="mealBody">
+  <div class="mcard L shadow p-3 mb-3 rounded">
+  <p class="mealName">{{meal.Name}}</p>
+  </div>
+  <div class="mcard R shadow p-3 mb-3 rounded">
+  <p class="mealRating">Ethic Rating: {{meal.er}}</p>
+  </div>
+  <table class="ingredientTable shadow p-4 mb-4 rounded">
+    <thead>
+      <tr class="ingredientTable">
+      <th class="ingName">Ingredients</th>
+      <th class="ingRating">Ethic Rating</th>
+      </tr>
+    </thead>
+    <tbody class="ingredientTable">
+      {{#each ingredient}}
+        <tr class="ingredientTable">
+          <td class="ingName"><a class="tblLink" href="http://localhost:8000/ingredient/{{ID}}">{{Name}}</a></td>
+          <td class="ingRating">{{Rating}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
