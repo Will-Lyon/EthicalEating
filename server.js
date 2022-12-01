@@ -53,8 +53,14 @@ var punctuation = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
 
 app.get('/ingredient/:id', function (req, res, next) {
     var ingredientId = req.params.id;
-    if (ingredients[ingredientId]) {
-        res.status(200).render('ingredientPage', ingredientList[ingredientId])
+    
+    if(ingredientId.includes("search")){
+        search = req.query.q;
+        console.log(search);
+        res.status(200).render('ingredientPage', searching(search))
+    }
+    else if (ingredients[ingredientId]) {
+        res.status(200).render('ingredientPage', ingredients[ingredientId])
     }
     else {
         next()
@@ -70,3 +76,15 @@ app.get("*", function (req, res, next) {
 app.listen(port, function() {
     console.log("==server listening on port: ", port)
 })
+
+
+
+function searching(s){
+    for(i in ingredients){
+        console.log(ingredients[i].Name)
+        if(ingredients[i].Name == s){
+            return ingredients[i];
+        }
+    }
+    return {"Name": s }; 
+}  
