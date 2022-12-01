@@ -264,5 +264,99 @@
   color: black;
  }
 
+.mealName{
+  position:relative;
+  top:50%;
+  transform: translatey(-50%);
+  margin:auto;
+  display: inline-block;
+  width:100%;
+  text-align:center;
+  vertical-align:middle;
+  font-size: 8vw;
+}
+
+.mealRating{
+  position:relative;
+  top:50%;
+  transform: translatey(-50%);
+  margin:0;
+  width:100%;
+  text-align:center;
+  vertical-align:top;
+  font-size: 6vw;
+}
+
+.mcard{
+  text-align:justify;
+  display:inline-block;
+  background-color: var(--color-white);
+  vertical-align:middle;
+  border: 1px solid #ccc;
+  width: 40vw;
+  height: 40vw;
+}
+
+.mcard.L{
+  margin-right:1vw;
+}
+
+.mealBody{
+  padding: 1vw 5vw;
+  background-color: #dddddd;
+}
+
+table.ingredientTable{
+  width: 82vw;
+}
+
+.mealInfo{
+  padding-left: 5vmin;
+}
+
+tbody.ingredientTable tr.ingredientTable:nth-child(odd){
+  background-color:var(--color-light-gray);
+}
+
+tbody .ingredientTable tr.ingredientTable:nth-child(even){
+  background-color:var(--color-white);
+}
+
+
+table.ingredientTable{
+  margin-top:20px;
+  border: 1px solid #777;
+  border-collapse:collapse;
+  background-color: #fff;
+}
+
+tr.ingredientTable{
+  border: 1px solid #1111;
+  height:48px;
+}
+
+th.ingName{
+  text-align:left;
+  padding-left: 30px;
+}
+
+th.ingRating{
+  text-align:right;
+  padding-right: 30px;
+}
+
+td.ingName{
+  text-align:left;
+  padding-left: 30px;
+}
+
+td.ingRating{
+  text-align:right;
+  padding-right: 30px;
+}
+
+a.tblLink{
+  text-decoration: none;
+}
 
 
