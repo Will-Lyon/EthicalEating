@@ -1,25 +1,37 @@
 <main class="ingredientPage">
     <div id="ingredient-search-container">
-    <form action="ingredient/search" class="input-group mb-3 search-bar">
+    <form action="/ingredient/search" class="input-group mb-3 search-bar">
         <input type="text" class="form-control" name="q" placeholder="Ingredient Name">
         <button type="submit" class="btn btn-primary input-group-append">Search</button>
     </form>
 
     <button type="button" id="add-ing-button">Add Ingredient</button>
 
-    <h1 id="ing-search-result"> Results for {{name}}</h1>
+    <h1 class="ing-search-result"> Results for {{searchq}}{{Name}}</h1>
     <div class="ingredient-card-container">
+        <h1 style="display: none;" id="ingredientId">{{searchq}}{{Name}}</h1>
         
         {{#each Producers}}
             {{> ingredientCard}}
         {{/each}}
+        
+        {{#if Name}}
+            {{#if Producers}}
+            
+            {{else}}
+                <h2 class="no-results">No information on producers of {{Name}}</h2>
+                
+            {{/if}}
+                <button type="button" id="add-producer-button">Add Producer</button>
+        {{else}}
+            <h2 class="no-results">No ingredients match your search</h2>
+        {{/if}}
 
     </div>
     </div>
-
-    <button type="button" id="add-producer-button"></button>
+    
     {{>addIngPop}}
-  
+    {{>addIngProdPop}}
 </main>
 {{!
 <button type="button" id="add-ingredient-button"></button>

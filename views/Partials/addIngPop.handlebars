@@ -1,11 +1,30 @@
 <div id="ingModal">
-    <div class="ing-add-modal">
-        <div class="close-ing-modal">+</div>
-        <h3 class="h3-black login-text">Ingredient Name</h3>
-        <form action="">
-            <input type="text" class="new-ingredient-input ing-input" placeholder="Ingredient">
-            <button type="submit" id="add-ingredient">Add ingredient</button>
-        </form>
+    <div class="add-modal">
+        <div class="close-add-modal exit-modal">+</div>
+
+        <div class="ingredient-name">
+            <label for="ingredient-name-input">Ingredient name</label>
+            <input type="text" class="modal-input" id="ingredient-name-input">
+        </div>
+
+        <button type="button" class="" id="ingredient-submit-button">Submit</button>
     </div>
 </div>
 
+{{!--
+<div id="ingModal">
+    <div class="ing-add-modal">
+        <div class="close-ing-modal">+</div>
+        <h3 class="h3-black login-text">Ingredient Name</h3>
+        <form action="" class="ingredient/addIngredient" method="POST">
+            <input type="text" class="new-ingredient-input ing-input" placeholder="Ingredient">
+            <button type="submit" id="add-ingredient">Add ingredient</button>
+        </form>
+
+        <div id="ingredient-input">
+            <label for="ingredient-name-input">Ingredient name</label>
+            <input type="text" id="ingredient-name-input">
+        </div>
+    </div>
+</div>
+--}}
