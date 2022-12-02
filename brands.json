@@ -1,3 +1,42 @@
-{
-    
-}
+[
+    {
+        "Name" : "Firstfruits Farm",
+        "numReviews" : "2",
+        "ethicScore" : "5.6",
+        "Ingredients" : [
+            "apple", "pear"
+        ]
+    },
+    {
+        "Name" : "Queener Farm",
+        "numReviews" : "1",
+        "ethicScore" : "7.2",
+        "Ingredients" : [
+            "apple", "pear"
+        ]
+    },
+    {
+        "Name" : "Adair's orchards",
+        "numReviews" : "1",
+        "ethicScore" : "4",
+        "Ingredients" : [
+            "apple"
+        ]
+    },
+    {
+        "Name" : "Winn Farms",
+        "numReviews" : "4",
+        "ethicScore" : "2",
+        "Ingredients" : [
+            "egg", "pork"
+        ]
+    },
+    {
+        "Name" : "Crazy Acres",
+        "numReviews" : "3",
+        "ethicScore" : "6.2",
+        "Ingredients" : [
+            "egg"
+        ]
+    }
+]

@@ -25,6 +25,14 @@ app.get('/', function (req, res, next) {
     res.status(200).render('landingPage')
 })
 
+//eventually this will be used to do search stuffs from the main page. 
+// app.get('/search', function(req,res,next){
+//     search = req.query.q;
+//     res.status(200).render("mainsearch", searchgen(search))
+// })
+
+
+//this one doesnt display anything by default anymore but it shouldnt really matter in this case
 app.get('/ingredient', function (req, res, next) {
     res.status(200).render('ingredientPage', {
         //ingredientList: ingredients
@@ -152,3 +160,28 @@ function searching(s){
     }
     return {"searchq": s }; 
 }  
+
+function searchbrand(s){
+    out = []
+    for(b in brands){
+        if(brands[b].Name == s){
+            out.push(brands[b])
+        }else{
+            for(i in brands[b].Ingredients){
+                if(brands[b].Ingredients[i] == s){
+                    out.push(brands[b])
+                }
+            }
+        }
+    }
+    return out;
+}
+
+function searchgen(s){
+
+    return {
+        Search: s,
+        Ingredients: searching(s),
+        Brands: searchbrand(s)
+    }
+}
