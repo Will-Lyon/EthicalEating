@@ -84,6 +84,7 @@ document.getElementById('producer-submit-button').addEventListener('click', func
     var prodScore = document.getElementById('producer-score-input').value.trim()
     var ingredientId = document.getElementById('ingredientId').innerText
     if(!prodName || !prodScore) {alert("please fill all fields")}
+    else if (prodScore < 1 || prodScore > 10) {alert("please enter a value between 1 and 10")}
     else {
 
         var prodUrl = 'ingredient/' + ingredientId + '/addNewProd'
@@ -112,15 +113,41 @@ document.getElementById('producer-submit-button').addEventListener('click', func
  * Rate producer functionality
  */
 var rateModal = document.getElementById('rateModal')
-
-document.getElementById('rate-them-button').addEventListener('click', function () {
-    rateModal.style.display = 'flex'
+var prodId
+document.querySelectorAll('.rate-them-button').forEach(item=>{
+    item.addEventListener('click', function(event) {
+        rateModal.style.display = 'flex'
+        prodId = event.currentTarget.getAttribute('data-id')
+    })
 })
 
+    
+
+
 document.getElementById('rating-submit-button').addEventListener('click',function() {
-    var ratingNum = document.getElementById('rating-input')
+    var ratingNum = document.getElementById('rating-input').value.trim()
     var ingredientId = document.getElementById('ingredientId').innerText
-    var producerId = 
+    console.log(ratingNum)
+    if(!ratingNum || ratingNum < 1 || ratingNum > 10) {alert("please enter a number between 1 and 10")}
+    else {
+        var url = 'ingredient/' + ingredientId + '/rateProd'
+        fetch(url, {
+            method: 'POST',
+            body : JSON.stringify({
+                producerName: prodId,
+                ethicScoreRaw : ratingNum
+            }),
+            headers: {'Content-Type' : 'application/json'}
+        }).then(function(res) {
+            if(res.status === 200) {
+
+            } else {
+                alert("Unable to save rating")
+            }
+        })
+    }
+    rateModal.style.display = 'none'
+    clearIngModals()
 })
 
 //close modals
@@ -139,8 +166,3 @@ function clearIngModals () {
         userInput[i].value = ''
     }
 }
-
-
-
-
-
