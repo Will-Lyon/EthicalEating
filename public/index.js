@@ -18,7 +18,7 @@ document.querySelectorAll('.close-modal').forEach(item => {
         }
     })
 })
-/* breaking 
+
 document.getElementById('register-button').addEventListener('click',
     function () {
         bgModal.style.display = 'none';
@@ -30,7 +30,32 @@ document.getElementById('login-link').addEventListener('click',
         bgModal.style.display = 'flex';
         regModal.style.display = 'none';
     });
-*/
+
+//Get information the unser inputs and write to the account json file if inputted correctly
+function regVer(){
+    const regUser = document.getElementById('regUsername').value
+    const regPass = document.getElementById('regPassword').value
+    const confPass = document.getElementById('confPassword').value
+    
+    //**Need to get this information written to a json file or some external file to hold all registered accounts**
+    if(regPass == confPass){
+        var regData = JSON.stringify({
+            'username': regUser,
+            'password': regPass
+        })
+        console.log(regData) 
+    }
+    else
+        alert('Make sure all sections are filled out and both passwords are the same')
+}
+
+//Get information from account login **Need to compare to registered accounts in Json or some other file**
+function loginAcc(){
+    const accUsername = document.getElementById('loginUsername').value
+    const accPassword = document.getElementById('loginPassword').value
+    console.log(accUsername)
+    console.log(accPassword)
+}
 
 /*
  * Add ingredient functionality
