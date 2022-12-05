@@ -1,10 +1,14 @@
+//Value to allow actions unless user is logged in
+var loggedIn = false;
 //Event Listenters For login/register Popups
-var bgModal = document.getElementById('bg-modal')
+var bgModal = document.getElementById('bg-modal')       
 var regModal = document.getElementById('reg-modal')
 
 document.getElementById('login-button').addEventListener('click',
     function () {
+        if(loggedIn == false){
         bgModal.style.display = 'flex';
+        }
     });
 
 document.querySelectorAll('.close-modal').forEach(item => {
@@ -31,31 +35,63 @@ document.getElementById('login-link').addEventListener('click',
         regModal.style.display = 'none';
     });
 
-//Get information the unser inputs and write to the account json file if inputted correctly
+
+//Universal Admin Login to test to work around log in feature
+const adminLog = {
+    username : "Admin",
+    password : "Admin"
+};
+
+let logData =[]
+
+//Get information the user inputs and write to the account json file if inputted correctly
 function regVer(){
-    const regUser = document.getElementById('regUsername').value
-    const regPass = document.getElementById('regPassword').value
+    const userN = document.getElementById('regUsername').value
+    const passWord = document.getElementById('regPassword').value
     const confPass = document.getElementById('confPassword').value
-    
-    //**Need to get this information written to a json file or some external file to hold all registered accounts**
-    if(regPass == confPass){
-        var regData = JSON.stringify({
-            'username': regUser,
-            'password': regPass
+       //**Need to get this information written to a json file or some external file to hold all registered accounts**
+    if(passWord == confPass){
+       /* var regData = JSON.stringify({
+            'username': userN,
+            'password': passWord
         })
-        console.log(regData) 
-    }
+        console.log(regData)      */  
+      
+        logData.push(userN)
+        logData.push(passWord)
+        alert("Registration Successful")
+
+        }
+    
     else
         alert('Make sure all sections are filled out and both passwords are the same')
 }
+
 
 //Get information from account login **Need to compare to registered accounts in Json or some other file**
 function loginAcc(){
     const accUsername = document.getElementById('loginUsername').value
     const accPassword = document.getElementById('loginPassword').value
-    console.log(accUsername)
-    console.log(accPassword)
+    if(accUsername == adminLog.username && accPassword == adminLog.password){
+        loggedIn = true;
+        alert("Logged In Successfully")
+    }
+
+    else if(accUsername == logData[0] && accPassword == logData[1]){
+        loggedIn = true;
+        alert("Logged In Successfully")
+        for(var item in logData){
+            delete logData[item]
+        }
+    }
+
+    else 
+        alert("Login Unsucessful")
+
+    console.log(logData)
+
 }
+
 
 /*
  * Add ingredient functionality
