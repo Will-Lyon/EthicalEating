@@ -139,9 +139,9 @@ app.post('*/ingredient/:id/rateProd', function(req,res) {
     //find occurance of producer in ingredient
     var prodIndex = ingredients[indexOf].Producers.findIndex(i=>i.producerName === req.body.producerName)
     //update producer rating then rewrite to json
-    var raw = ingredients[indexOf].Producers[prodIndex].ethicScoreRaw + Number(req.body.ethicScoreRaw)
-    
-    var count = ingredients[indexOf].Producers[prodIndex].numReviews + 1
+    var raw = Number(ingredients[indexOf].Producers[prodIndex].ethicScoreRaw) + Number(req.body.ethicScoreRaw)
+    console.log('raw', raw)
+    var count = Number(ingredients[indexOf].Producers[prodIndex].numReviews + 1)
     var score = raw / count
 
     var newProd = {
