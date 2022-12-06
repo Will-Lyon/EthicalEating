@@ -6,6 +6,7 @@ var fs = require('fs')
 
 var ingredients = require("./ingredients.json")
 var brands = require("./brands.json")
+var recipes = require("./recipie.json")
 
 const { resolveSoa } = require('dns')
 const e = require('express')
@@ -119,7 +120,7 @@ app.post("*/build/addNew", function(req,res){
         }
         recipes.push(newRecipe);
 
-        fs.writeFile('./recipes2.json', JSON.stringify(recipes, null, 2), function(err) {
+        fs.writeFile('./recipie.json', JSON.stringify(recipes, null, 2), function(err) {
             if(err){
                 res.status(500).send("error writing ingredient to database")
             }
