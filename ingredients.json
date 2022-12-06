@@ -1,3 +1,14 @@
 [
-
+  {
+    "Name": "apple",
+    "Producers": [
+      {
+        "producerName": "Bobs farms",
+        "numReviews": 2,
+        "ethicScore": 6.65,
+        "ethicScoreRaw": 13.3
+      }
+    ],
+    "_locals": {}
+  }
 ]

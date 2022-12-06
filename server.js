@@ -47,6 +47,11 @@ app.get('/brand', function (req, res, next) {
     })
 })
 
+app.get('/build', function (req, res, next){
+    res.status(200).render('createMeal')
+})
+
+
 app.get('/brand/:id', function (req, res, next) {
     var brandId = req.params.id;
     if (brands[brandId]) {
@@ -95,6 +100,31 @@ app.post('*/ingredient/addNew', function(req,res) {
                 res.status(500).send("error writing ingredient to database")
             } else {
                 res.status(200).send("ingredient added")
+            }
+        })
+    } else {
+        res.status(400).send("requests must contain a json body with matching fields")
+    }
+})
+
+
+//recipies
+app.post("*/build/addNew", function(req,res){
+    if(req.body && req.body.Name && req.body.Ingredients && !recipes[req.body.Name]) {
+        console.log("Client sent: ", req.body)
+
+        var newRecipe = {
+            Name: req.body.Name,
+            Ingredients : req.body.Ingredients
+        }
+        recipes.push(newRecipe);
+
+        fs.writeFile('./recipes2.json', JSON.stringify(recipes, null, 2), function(err) {
+            if(err){
+                res.status(500).send("error writing ingredient to database")
+            }
+            else {
+                res.status(200).send("recipe added")
             }
         })
     } else {
